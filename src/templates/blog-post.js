@@ -13,7 +13,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
-    <div class="container">
+    <div className="container">
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
