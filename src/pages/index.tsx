@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import "../utils/common.css"
 
 type Data = {
   site: {
@@ -35,7 +36,8 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <div class="container">
+    <Layout class="layout" location={location} title={siteTitle} >
       <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
@@ -65,6 +67,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
         )
       })}
     </Layout>
+    </div>
   )
 }
 

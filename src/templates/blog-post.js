@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import "../utils/common.css"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -12,6 +13,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext
 
   return (
+    <div class="container">
     <Layout location={location} title={siteTitle}>
       <SEO
         title={post.frontmatter.title}
@@ -75,6 +77,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </ul>
       </nav>
     </Layout>
+    </div>
   )
 }
 
